@@ -1,0 +1,45 @@
+# CS-242-Sonoma-State-Project-2
+This is part one of project two.
+
+
+// Written By Nicholas A Ivanoff                                                                                                                                                                                                  
+
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
+struct doc{
+  int value; // 1 or 0, Shakes or not.                                                                                                                                                                                            
+  vector<int>words; // words                                                                                                                                                                                                      
+};
+
+
+int main (){
+
+  fstream sampleFile; // file for toy.data                                                                                                                                                                                        
+  fstream sampleWords; // file for toy.class                                                                                                                                                                                      
+  fstream testFile; // file for toytest.data                                                                                                                                                                                      
+
+  sampleFile.open("toy.data.txt");
+  sampleWords.open("toy.class.txt");
+  testFile.open("toytest.data.txt");
+
+  int i=0;
+  int temp; // temp to store 1 or 0 value                                                                                                                                                                                         
+  vector<doc>sampleData; // vector of sample data                                                                                                                                                                                 
+
+  while (sampleFile>>temp) // reads sample input into data file.                                                                                                                                                                  
+    {
+    doc input;
+    input.value=temp;
+    sampleData.push_back(input);
+    cout<<input.value<<endl;
+    }
+
+  return 0;
+}
+
